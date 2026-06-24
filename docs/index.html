@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas y Términos | AuraPOS</title>
+    <meta name="description" content="Política de Privacidad y Términos y Condiciones de Uso de AuraPOS, aplicación de punto de venta empresarial para Android.">
+    <style>
+        :root {
+            --bg-main: #05070c;
+            --bg-card: #0b111e;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --border: #1e293b;
+            --code-bg: #1e1b4b;
+            --code-text: #818cf8;
+            --green: #22c55e;
+            --amber: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .top-glow {
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #06b6d4);
+            width: 100%;
+        }
+
+        header {
+            background-color: rgba(11, 17, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-title);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 40px auto 60px auto;
+            padding: 0 24px;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 9px 22px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover,
+        .nav-pill:focus {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .policy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--green);
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-top: 44px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: var(--text-muted);
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #a5b4fc;
+            border-bottom-style: solid;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(30, 41, 59, 0.4);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--amber);
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* Tabla de seguridad de datos */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: rgba(99, 102, 241, 0.12);
+            color: #a5b4fc;
+            font-weight: 700;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-body);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:nth-child(even) td {
+            background: rgba(30, 41, 59, 0.2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag-no { background: rgba(34, 197, 94, 0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+        .tag-yes { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+        .tag-local { background: rgba(99, 102, 241, 0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2); }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px 60px 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            background-color: #030508;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            border-bottom-color: transparent;
+        }
+
+        @media (max-width: 640px) {
+            .container { margin: 20px auto; }
+            .policy-card { padding: 30px 20px; border-radius: 12px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .nav-pills { gap: 10px; }
+            .nav-pill { padding: 8px 16px; font-size: 13px; width: 100%; text-align: center; }
+            .data-table { font-size: 12px; }
+            .data-table th, .data-table td { padding: 10px 10px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-glow"></div>
+
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-icon">🐰</span> AuraPOS
+        </a>
+    </header>
+
+    <div class="container">
+
+        <div class="nav-pills">
+            <a href="#privacidad" class="nav-pill">Política de Privacidad</a>
+            <a href="#seguridad-datos" class="nav-pill">Seguridad de Datos</a>
+            <a href="#terminos" class="nav-pill">Términos y Condiciones</a>
+        </div>
+
+        <!-- ============================================================
+             POLÍTICA DE PRIVACIDAD
+        ============================================================ -->
+        <div class="policy-card" id="privacidad">
+            <span class="badge">Documento Oficial — Google Play</span>
+            <h1>Política de Privacidad</h1>
+            <div class="date">Última actualización: 24 de junio de 2026</div>
+
+            <p>Esta Política de Privacidad describe de forma transparente y completa cómo la aplicación móvil
+                <strong>AuraPOS</strong> (en adelante, «la Aplicación»), desarrollada por <strong>NexoBits</strong>,
+                recopila, usa, almacena y protege la información de sus usuarios. La Aplicación es una solución de
+                punto de venta (POS) empresarial (B2B) orientada a la gestión comercial local de tiendas y comercios.</p>
+
+            <p>Al instalar o usar la Aplicación, el operador del negocio (en adelante, «usuario») declara haber leído
+                y aceptado íntegramente esta Política. Si no está de acuerdo, debe desinstalar la Aplicación.</p>
+
+            <div class="highlight-box success">
+                <p><strong>Resumen rápido:</strong> AuraPOS no vende, comparte ni monetiza datos personales o comerciales.
+                    Toda la información de ventas, productos y clientes permanece en el dispositivo del usuario.
+                    Solo se contacta con Firebase para validar la licencia de uso.</p>
+            </div>
+
+            <!-- 1. Información que recopilamos -->
+            <h2>1. Información que Recopilamos</h2>
+
+            <h3>A. Datos operacionales del negocio (almacenados únicamente en el dispositivo)</h3>
+            <p>La Aplicación opera de forma descentralizada mediante una base de datos SQLite local (<code>Drift</code>).
+                Se almacenan en el dispositivo del usuario:</p>
+            <ul>
+                <li>Catálogo de productos: nombres, precios, códigos de barras e inventario físico.</li>
+                <li>Historial de transacciones de venta: marcas de tiempo, totales y método de pago.</li>
+                <li>Datos de clientes del negocio gestionados por el propio comercio: nombre, teléfono, correo
+                    electrónico y puntos de fidelidad. Estos datos son ingresados manualmente por el operador
+                    y nunca se transmiten a servidores externos.</li>
+                <li>Configuración del sistema: nombre del negocio, parámetros de impresora y ajustes de
+                    la aplicación.</li>
+            </ul>
+
+            <h3>B. Identificador de dispositivo para licencias (<code>device_uuid</code>)</h3>
+            <p>Para gestionar y validar la licencia de uso, la Aplicación genera un identificador único de dispositivo
+                (<code>device_uuid</code>). Este identificador:</p>
+            <ul>
+                <li>Se genera mediante un hash <strong>SHA-256 con sal</strong> aplicado sobre información del
+                    dispositivo, con el fin de <strong>proteger la identidad física real del hardware</strong>.</li>
+                <li>Se almacena de forma cifrada en el almacenamiento seguro del sistema operativo
+                    (<code>FlutterSecureStorage</code>).</li>
+                <li>Se comparte con el servidor de licencias de Firebase <strong>exclusivamente</strong> para verificar
+                    que la licencia adquirida sea válida y no esté siendo utilizada en más dispositivos de los
+                    permitidos.</li>
+                <li><strong>No se utiliza para rastrear al usuario, mostrar publicidad ni con ningún otro fin.</strong></li>
+            </ul>
+
+            <h3>C. Datos de diagnóstico (Firebase)</h3>
+            <p>La Aplicación usa Firebase (Google LLC) como infraestructura de gestión de licencias. Firebase puede
+                recopilar automáticamente métricas de diagnóstico técnico del dispositivo (modelo, versión de Android,
+                idioma) según la
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.
+                Estos datos son procesados por Google y no son accesibles para NexoBits más allá de lo que expone la
+                consola de Firebase.</p>
+
+            <h3>D. Datos que NO recopilamos</h3>
+            <ul>
+                <li><strong>Ubicación geográfica (GPS):</strong> La Aplicación no rastrea, solicita ni almacena
+                    coordenadas de ubicación del usuario bajo ninguna circunstancia.</li>
+                <li><strong>Contactos del teléfono:</strong> No se accede a la agenda de contactos del dispositivo.</li>
+                <li><strong>Micrófono ni audio:</strong> No se graban ni procesan conversaciones.</li>
+                <li><strong>Fotos o videos personales:</strong> La cámara se usa exclusivamente para escanear
+                    códigos de barras o capturar imágenes de productos del catálogo.</li>
+            </ul>
+
+            <!-- 2. Permisos -->
+            <h2>2. Permisos del Dispositivo y su Justificación</h2>
+            <p>La Aplicación solicita únicamente los permisos estrictamente necesarios para su funcionamiento.
+                A continuación se detalla cada uno con su propósito exacto:</p>
+            <ul>
+                <li>
+                    <strong>Cámara</strong> (<code>android.permission.CAMERA</code>)<br>
+                    <em>Propósito:</em> Activar el módulo lector de códigos de barras integrado en el punto de venta
+                    y capturar fotografías de productos para el catálogo. Este permiso es solicitado únicamente cuando
+                    el usuario accede a las funciones de escaneo o carga de imagen.
+                </li>
+                <li>
+                    <strong>Bluetooth clásico</strong> (<code>android.permission.BLUETOOTH</code>,
+                    <code>maxSdkVersion="30"</code>)<br>
+                    <em>Propósito:</em> Conexión con impresoras térmicas de tickets (ESC/POS) en Android 11 e inferior.
+                    Solo aplicable en dispositivos con API ≤ 30.
+                </li>
+                <li>
+                    <strong>Bluetooth Conectar</strong> (<code>android.permission.BLUETOOTH_CONNECT</code>)<br>
+                    <em>Propósito:</em> Establecer comunicación con la impresora Bluetooth previamente emparejada para
+                    emitir comprobantes de pago físicos.
+                </li>
+                <li>
+                    <strong>Bluetooth Escanear</strong> (<code>android.permission.BLUETOOTH_SCAN</code>,
+                    <code>usesPermissionFlags="neverForLocation"</code>)<br>
+                    <em>Propósito:</em> Descubrir impresoras térmicas Bluetooth disponibles en el entorno del negocio.
+                    El flag <code>neverForLocation</code> confirma explícitamente al sistema que este permiso
+                    <strong>no se usa para inferir ubicación</strong>.
+                </li>
+                <li>
+                    <strong>Ubicación aproximada</strong>
+                    (<code>android.permission.ACCESS_FINE_LOCATION</code>, <code>maxSdkVersion="30"</code>)<br>
+                    <em>Propósito:</em> En versiones de Android 11 e inferiores (API ≤ 30), el sistema operativo
+                    Android exige este permiso para habilitar el escaneo de dispositivos Bluetooth. Esto es un
+                    requisito del sistema operativo, <strong>no de AuraPOS</strong>. La Aplicación
+                    <strong>no recopila, almacena ni transmite coordenadas de ubicación</strong>. Este permiso
+                    solo aplica a dispositivos con Android ≤ 11; en Android 12 o superior no se solicita.
+                </li>
+                <li>
+                    <strong>Internet</strong> (<code>android.permission.INTERNET</code>)<br>
+                    <em>Propósito:</em> Verificar el estado de la licencia de uso con el servidor Firebase y
+                    sincronizar datos con el servidor local del negocio (red LAN/mDNS).
+                </li>
+            </ul>
+
+            <!-- 3. Uso de la información -->
+            <h2>3. Uso de la Información</h2>
+            <p>La información recopilada se utiliza exclusivamente para:</p>
+            <ul>
+                <li>Operar el sistema de punto de venta: registrar ventas, gestionar inventario y emitir
+                    comprobantes.</li>
+                <li>Validar y mantener activa la licencia de uso mediante el <code>device_uuid</code>.</li>
+                <li>Sincronizar datos operacionales con el servidor local del negocio cuando el usuario lo configure.</li>
+                <li>Enviar notificaciones administrativas del sistema (alertas de vencimiento de licencia,
+                    actualizaciones).</li>
+            </ul>
+            <p><strong>No utilizamos la información para:</strong> publicidad, perfilado de usuarios, análisis de
+                comportamiento, venta a terceros ni ningún fin distinto a los listados anteriormente.</p>
+
+            <!-- 4. Compartición de datos -->
+            <h2>4. Intercambio de Datos con Terceros</h2>
+            <p>AuraPOS aplica una política estricta de mínima exposición de datos:</p>
+            <ul>
+                <li><strong>No vendemos, arrendamos ni transferimos</strong> datos operacionales, inventarios,
+                    registros de ventas ni listas de clientes a ninguna entidad externa.</li>
+                <li>Las únicas conexiones salientes autorizadas son:
+                    <ul>
+                        <li><strong>Firebase (Google LLC):</strong> Infraestructura de validación de licencias y
+                            notificaciones administrativas. Se envía el <code>device_uuid</code> (hash SHA-256,
+                            no el identificador físico real) para verificar la licencia.
+                            Firebase aplica su propia
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+                                política de privacidad</a>.</li>
+                        <li><strong>Servidor local del negocio (LAN/mDNS):</strong> Sincronización de datos
+                            entre dispositivos del mismo establecimiento. El flujo de datos cifrado nunca abandona
+                            la red interna del local comercial. Su configuración es responsabilidad del usuario.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 5. Almacenamiento y seguridad -->
+            <h2>5. Almacenamiento y Seguridad de los Datos</h2>
+            <p>La protección de la información comercial es una prioridad de diseño en AuraPOS:</p>
+            <ul>
+                <li>Todos los datos operacionales se almacenan en la base de datos SQLite cifrada dentro del
+                    almacenamiento aislado de la aplicación (<em>app-specific storage</em>), inaccesible para
+                    otras aplicaciones.</li>
+                <li>Las credenciales de licencia, PIN de administrador e identificadores sensibles se protegen
+                    mediante <code>FlutterSecureStorage</code>, que utiliza el <strong>Android Keystore System</strong>
+                    (cifrado AES respaldado por hardware cuando está disponible).</li>
+                <li>La opción <code>android:allowBackup="false"</code> está habilitada en el manifiesto, lo que
+                    <strong>impide que Android realice copias de seguridad automáticas</strong> de los datos de la
+                    aplicación en la nube de Google, protegiendo así la información comercial del usuario.</li>
+                <li>Las conexiones de red externas utilizan HTTPS/TLS.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Nota de seguridad:</strong> El operador del negocio es el único custodio y responsable
+                    de la seguridad física del dispositivo. Se recomienda configurar bloqueo de pantalla y
+                    cifrado de dispositivo en el sistema operativo Android.</p>
+            </div>
+
+            <!-- 6. Retención y eliminación -->
+            <h2>6. Retención y Eliminación de Datos</h2>
+            <p>Todos los registros operacionales permanecen almacenados en el dispositivo del usuario hasta que:</p>
+            <ul>
+                <li>El operador los elimine manualmente desde las herramientas internas de la Aplicación.</li>
+                <li>El usuario desinstale completamente la Aplicación, lo que elimina todos los datos locales.</li>
+            </ul>
+            <p><strong>No conservamos copias de seguridad de datos comerciales en servidores en la nube.</strong>
+                El <code>device_uuid</code> (hash SHA-256) asociado a una licencia puede ser solicitado para su
+                eliminación del servidor Firebase contactando al soporte técnico.</p>
+
+            <!-- 7. Menores de edad -->
+            <h2>7. Protección de Menores de Edad</h2>
+            <p>AuraPOS es una aplicación empresarial (B2B) diseñada exclusivamente para uso por adultos en el
+                contexto de la gestión comercial de un negocio. La Aplicación:</p>
+            <ul>
+                <li><strong>No está dirigida a menores de 13 años</strong> (o la edad mínima digital aplicable
+                    en la jurisdicción del usuario).</li>
+                <li>No recopila intencionalmente información de menores de edad.</li>
+                <li>Si un operador tiene motivos para creer que se han recopilado datos de un menor sin
+                    consentimiento, debe contactar de inmediato con el equipo de soporte para solicitar
+                    la eliminación de dicha información.</li>
+            </ul>
+
+            <!-- 8. Derechos del usuario -->
+            <h2>8. Derechos del Usuario sobre sus Datos</h2>
+            <p>Como usuario de AuraPOS, tiene derecho a:</p>
+            <ul>
+                <li><strong>Acceder</strong> a sus datos locales directamente desde la Aplicación en cualquier
+                    momento.</li>
+                <li><strong>Corregir o eliminar</strong> datos operacionales (productos, clientes, ventas) desde
+                    las funciones internas de la Aplicación.</li>
+                <li><strong>Solicitar la eliminación</strong> del <code>device_uuid</code> del servidor de licencias
+                    contactando al equipo de soporte.</li>
+                <li><strong>Exportar</strong> sus datos comerciales mediante las funciones de copia de seguridad
+                    incluidas en la Aplicación.</li>
+                <li><strong>Desinstalar</strong> la Aplicación en cualquier momento, lo que elimina todos los
+                    datos locales del dispositivo de forma permanente.</li>
+            </ul>
+
+            <!-- 9. Modificaciones -->
+            <h2>9. Modificaciones a esta Política</h2>
+            <p>Nos reservamos el derecho de actualizar esta Política de Privacidad para adaptarla a mejoras técnicas,
+                nuevas funcionalidades o cambios normativos del ecosistema Android. La fecha indicada en el encabezado
+                reflejará siempre la última revisión oficial. Se notificará al usuario sobre cambios significativos
+                mediante las notificaciones del sistema de la Aplicación. El uso continuado de la Aplicación tras
+                la publicación de una nueva versión de esta Política implica la aceptación de los cambios.</p>
+
+            <!-- 10. Contacto -->
+            <h2>10. Contacto y Solicitudes de Datos</h2>
+            <p>Para dudas sobre privacidad, solicitudes de eliminación de datos o soporte técnico:</p>
+            <ul>
+                <li><strong>Desarrollador:</strong> NexoBits — Soluciones de Software Independientes</li>
+                <li><strong>WhatsApp:</strong> +503 7566-6226</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+             SECCIÓN DE SEGURIDAD DE DATOS (Data Safety Summary)
+        ============================================================ -->
+        <div class="policy-card" id="seguridad-datos">
+            <span class="badge">Resumen de Seguridad de Datos</span>
+            <h1>Declaración de Seguridad de Datos</h1>
+            <div class="date">Para referencia en el formulario de Seguridad de Datos de Google Play</div>
+
+            <p>La siguiente tabla resume el comportamiento de AuraPOS respecto a la recopilación y manejo de datos,
+                en formato compatible con el formulario de <em>Data Safety</em> de Google Play Console:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Categoría de Dato</th>
+                        <th>¿Se recopila?</th>
+                        <th>¿Se comparte?</th>
+                        <th>¿Dónde se almacena?</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Identificador de dispositivo (<code>device_uuid</code> — hash SHA-256)</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-yes">Solo Firebase</span></td>
+                        <td>Dispositivo (cifrado) + Firebase</td>
+                        <td>Validación de licencia de uso</td>
+                    </tr>
+                    <tr>
+                        <td>Datos de clientes del negocio (nombre, teléfono, correo)</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Gestión de clientes del comercio</td>
+                    </tr>
+                    <tr>
+                        <td>Historial de ventas y transacciones</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Operación del POS</td>
+                    </tr>
+                    <tr>
+                        <td>Catálogo de productos e inventario</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Operación del POS</td>
+                    </tr>
+                    <tr>
+                        <td>Imágenes de productos (fotos del catálogo)</td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Visualización en catálogo</td>
+                    </tr>
+                    <tr>
+                        <td>Ubicación GPS / geolocalización</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Contactos del teléfono</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Datos de salud o financieros personales</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Diagnóstico técnico del dispositivo (Firebase Analytics)</td>
+                        <td><span class="tag tag-yes">Sí (Firebase)</span></td>
+                        <td><span class="tag tag-yes">Google LLC</span></td>
+                        <td>Servidores de Google</td>
+                        <td>Diagnóstico técnico / Firebase SDK</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <p><strong>Cifrado en tránsito:</strong> Todas las comunicaciones con Firebase se realizan sobre
+                    conexiones <strong>HTTPS/TLS</strong>. Los datos locales se almacenan en un área de almacenamiento
+                    aislada y, los datos críticos de licencia, mediante <strong>Android Keystore (AES)</strong>.</p>
+            </div>
+
+            <h3>Opciones de eliminación de datos</h3>
+            <ul>
+                <li><strong>Datos locales:</strong> El usuario puede eliminar sus datos en cualquier momento desde
+                    la aplicación, o desinstalando la aplicación del dispositivo.</li>
+                <li><strong>Identificador de licencia (device_uuid):</strong> Puede solicitar su eliminación del
+                    servidor Firebase contactando al soporte técnico mediante WhatsApp: +503 7566-6226.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+             TÉRMINOS Y CONDICIONES
+        ============================================================ -->
+        <div class="policy-card" id="terminos">
+            <span class="badge">Legal</span>
+            <h1>Términos y Condiciones de Uso</h1>
+            <div class="date">Vigente desde: Junio 2026 — Última revisión: 24 de junio de 2026</div>
+
+            <p>Al descargar, instalar o utilizar la aplicación <strong>AuraPOS</strong> (en adelante, «la Aplicación»),
+                el usuario —o el representante legal de la empresa que la opera— declara haber leído, comprendido
+                y aceptado íntegramente los presentes Términos y Condiciones. Si no está de acuerdo con alguno de
+                sus términos, debe abstenerse de usar la Aplicación.</p>
+
+            <h2>1. Licencia de Uso</h2>
+            <p>NexoBits otorga al usuario una licencia no exclusiva, intransferible y revocable para utilizar la
+                Aplicación en el número máximo de dispositivos permitidos por el plan adquirido:</p>
+            <ul>
+                <li><strong>Plan Básico:</strong> uso en 1 dispositivo móvil.</li>
+                <li><strong>Plan Premium:</strong> uso en hasta 3 dispositivos simultáneos.</li>
+                <li><strong>Modo Demo:</strong> acceso completo durante 15 días sin costo. No renovable con el
+                    mismo identificador de dispositivo.</li>
+            </ul>
+            <p>Queda prohibido modificar, descompilar, distribuir o sublicenciar la Aplicación o cualquiera de
+                sus componentes sin autorización expresa y por escrito del desarrollador.</p>
+
+            <h2>2. Datos Comerciales y Responsabilidad del Usuario</h2>
+            <p>La Aplicación almacena toda la información comercial (productos, ventas, clientes y configuración)
+                de forma local en el dispositivo mediante SQLite. El desarrollador de AuraPOS:</p>
+            <ul>
+                <li>No tiene acceso remoto a los datos comerciales del usuario.</li>
+                <li>No almacena ni replica datos de ventas en servidores externos.</li>
+                <li>No vende ni comparte información comercial con terceros.</li>
+            </ul>
+            <p>El usuario es el único responsable de la custodia física del dispositivo y de realizar copias de
+                seguridad de sus datos. La pérdida de datos por daño, robo, restablecimiento de fábrica o fallo
+                del dispositivo no es responsabilidad del desarrollador.</p>
+
+            <h2>3. Sincronización y Uso de Internet</h2>
+            <p>La Aplicación utiliza internet exclusivamente para:</p>
+            <ul>
+                <li>Verificar el estado de validez de la licencia con el servidor Firebase (RTDB).</li>
+                <li>Sincronizar catálogos, ventas y configuración con el servidor local del negocio
+                    (red interna LAN/mDNS), cuando el usuario lo configure.</li>
+                <li>Recibir notificaciones administrativas del sistema (actualizaciones, avisos de vencimiento).</li>
+            </ul>
+            <p>La Aplicación puede funcionar en modo offline. La conexión a internet es requerida para la
+                activación inicial y para la verificación periódica de licencia. Pasado el período de gracia
+                offline (72 horas), la Aplicación solicitará conexión para continuar operando.</p>
+
+            <h2>4. Uso Aceptable</h2>
+            <p>El usuario se compromete a utilizar la Aplicación únicamente con fines comerciales legítimos y
+                de conformidad con las leyes locales aplicables. Está expresamente prohibido:</p>
+            <ul>
+                <li>Usar la Aplicación para actividades ilegales, fraudulentas o que violen derechos de terceros.</li>
+                <li>Intentar eludir, hackear o manipular el sistema de validación de licencias.</li>
+                <li>Compartir las credenciales de licencia con terceros no autorizados.</li>
+                <li>Usar la Aplicación en más dispositivos de los permitidos por el plan adquirido.</li>
+            </ul>
+
+            <h2>5. Exclusión de Garantías</h2>
+            <div class="highlight-box warning">
+                <p>LA APLICACIÓN SE PROPORCIONA «TAL CUAL» (<em>AS-IS</em>) SIN GARANTÍAS DE NINGÚN TIPO,
+                    EXPRESAS NI IMPLÍCITAS. EL DESARROLLADOR NO GARANTIZA QUE LA APLICACIÓN SEA ININTERRUMPIDA,
+                    LIBRE DE ERRORES NI COMPLETAMENTE SEGURA. EL USUARIO ASUME TODO EL RIESGO DERIVADO DEL USO
+                    DE LA APLICACIÓN Y DE LA GESTIÓN DE SU INFORMACIÓN COMERCIAL.</p>
+            </div>
+
+            <h2>6. Limitación de Responsabilidad</h2>
+            <p>En ningún caso el desarrollador será responsable de daños directos, indirectos, incidentales o
+                consecuentes que surjan del uso o la imposibilidad de uso de la Aplicación, incluyendo pero no
+                limitado a: pérdida de datos, pérdida de ingresos o interrupción del negocio. La responsabilidad
+                máxima del desarrollador no excederá el monto pagado por la licencia durante los 3 meses previos
+                al evento que origina la reclamación.</p>
+
+            <h2>7. Modificaciones de los Términos</h2>
+            <p>El desarrollador se reserva el derecho de modificar estos Términos en cualquier momento. Los cambios
+                serán publicados en la versión en línea de este documento. El uso continuado de la Aplicación tras
+                la publicación de cambios constituye la aceptación de los nuevos términos.</p>
+
+            <h2>8. Ley Aplicable</h2>
+            <p>Estos Términos se rigen por las leyes de la República de El Salvador. Cualquier controversia que
+                surja en relación con estos Términos será sometida a la jurisdicción de los tribunales competentes
+                de dicho territorio, salvo acuerdo en contrario entre las partes.</p>
+
+            <h2>9. Contacto</h2>
+            <p>Para consultas sobre estos Términos y Condiciones o para ejercer sus derechos como usuario:</p>
+            <ul>
+                <li><strong>Desarrollador:</strong> NexoBits — Soluciones de Software Independientes</li>
+                <li><strong>WhatsApp:</strong> +503 7566-6226</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 <strong>AuraPOS</strong>. Desarrollado por <strong>NexoBits</strong> — Soluciones de Software Independientes.</p>
+        <p style="margin-top: 8px;">Esta política está disponible en línea de forma permanente como URL de Política de Privacidad para Google Play.</p>
+    </footer>
+
+</body>
+
+</html>
