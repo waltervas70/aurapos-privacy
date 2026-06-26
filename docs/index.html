@@ -370,7 +370,7 @@
         <div class="policy-card" id="privacidad">
             <span class="badge">Documento Oficial — Google Play</span>
             <h1>Política de Privacidad</h1>
-            <div class="date">Última actualización: 24 de junio de 2026 · v1.0</div>
+            <div class="date">Última actualización: 26 de junio de 2026</div>
 
             <p>Esta Política de Privacidad describe de forma transparente y completa cómo la aplicación móvil
                 <strong>AuraPOS</strong> (en adelante, «la Aplicación»), desarrollada por <strong>NexoBits</strong>,
@@ -383,9 +383,7 @@
             <div class="highlight-box success">
                 <p><strong>Resumen rápido:</strong> AuraPOS no vende, comparte ni monetiza datos personales o comerciales.
                     Toda la información de ventas, productos y clientes permanece en el dispositivo del usuario.
-                    Firebase se usa únicamente para validar la licencia y gestionar configuración administrativa.
-                    El procesamiento de imágenes con IA (ML Kit) ocurre completamente en el dispositivo, sin enviar
-                    imágenes a ningún servidor externo.</p>
+                    Solo se contacta con Firebase para validar la licencia de uso.</p>
             </div>
 
             <!-- 1. Información que recopilamos -->
@@ -426,48 +424,18 @@
                 Estos datos son procesados por Google y no son accesibles para NexoBits más allá de lo que expone la
                 consola de Firebase.</p>
 
-            <h3>D. Datos de DTE / Facturación Electrónica (El Salvador)</h3>
-            <p>Si el usuario habilita la función de <strong>Documento Tributario Electrónico (DTE)</strong>,
-                exclusiva para El Salvador, se recopilan y almacenan localmente en el dispositivo:</p>
-            <ul>
-                <li>NIT y NRC del emisor, tipo de contribuyente y nombre comercial.</li>
-                <li>Certificado de firma electrónica (<code>.p12</code> / <code>.pfx</code>) y su contraseña.</li>
-                <li>Datos fiscales del cliente receptor (nombre, NIT/DUI, NRC, dirección, correo electrónico).</li>
-            </ul>
-            <p>Estos datos se transmiten de forma cifrada únicamente a las API oficiales del
-                <strong>Ministerio de Hacienda de El Salvador (MH)</strong> para su validación tributaria.
-                Ningún dato fiscal es enviado a intermediarios ni almacenado por el desarrollador.</p>
-
-            <h3>E. Procesamiento de Imágenes con Inteligencia Artificial (ML Kit)</h3>
-            <p>Cuando el usuario toma una fotografía de un producto con la cámara de la Aplicación, se ofrece
-                opcionalmente la función de <strong>eliminación automática de fondo</strong>. Esta función
-                usa <strong>Google ML Kit Subject Segmentation</strong>, una API de IA local:</p>
-            <ul>
-                <li>El procesamiento ocurre <strong>completamente en el dispositivo</strong> (on-device),
-                    sin conexión a servidores externos.</li>
-                <li>Las imágenes de productos <strong>no se transmiten</strong> a Google ni a ningún servidor
-                    durante este proceso.</li>
-                <li>Las imágenes resultantes se almacenan exclusivamente en la base de datos local.</li>
-                <li>Su uso es <strong>totalmente opcional</strong>. El usuario puede usar fotos sin activar
-                    la eliminación de fondo.</li>
-            </ul>
-
-            <h3>F. Notificaciones Locales</h3>
-            <p>La Aplicación puede mostrar notificaciones locales en el dispositivo para alertar sobre:
-                vencimiento próximo de la licencia, confirmación de impresión exitosa de recibos y
-                recordatorios de sincronización. Estas notificaciones son generadas por el sistema operativo
-                Android de forma completamente local, <strong>sin involucrar servidores de notificaciones
-                push externos</strong>.</p>
-
-            <h3>G. Datos que NO recopilamos</h3>
+            <h3>D. Datos que NO recopilamos</h3>
             <ul>
                 <li><strong>Ubicación geográfica (GPS):</strong> La Aplicación no rastrea, solicita ni almacena
                     coordenadas de ubicación del usuario bajo ninguna circunstancia.</li>
                 <li><strong>Contactos del teléfono:</strong> No se accede a la agenda de contactos del dispositivo.</li>
                 <li><strong>Micrófono ni audio:</strong> No se graban ni procesan conversaciones.</li>
                 <li><strong>Fotos o videos personales:</strong> La cámara se usa exclusivamente para escanear
-                    códigos de barras o capturar imágenes de productos del catálogo comercial.</li>
+                    códigos de barras o capturar imágenes de productos del catálogo.</li>
             </ul>
+
+            <h3>E. Notificaciones Locales</h3>
+            <p>La Aplicación puede mostrar notificaciones locales en el dispositivo (sin pasar por servidores externos) para alertar sobre: nuevos encargos o pedidos recibidos desde el catálogo web, vencimiento próximo de la licencia de uso, productos con stock bajo, deudas/créditos vencidos y metas diarias de venta cumplidas. Estas notificaciones son generadas y mostradas completamente en el dispositivo por el sistema operativo Android, sin involucrar servidores de notificaciones push externos.</p>
 
             <!-- 2. Permisos -->
             <h2>2. Permisos del Dispositivo y su Justificación</h2>
@@ -509,8 +477,11 @@
                 </li>
                 <li>
                     <strong>Internet</strong> (<code>android.permission.INTERNET</code>)<br>
-                    <em>Propósito:</em> Verificar el estado de la licencia de uso con el servidor Firebase y
-                    sincronizar datos con el servidor local del negocio (red LAN/mDNS).
+                    <em>Propósito:</em> Verificar el estado de la licencia de uso, sincronizar datos del catálogo y escuchar pedidos en tiempo real en la nube.
+                </li>
+                <li>
+                    <strong>Notificaciones</strong> (<code>android.permission.POST_NOTIFICATIONS</code>)<br>
+                    <em>Propósito:</em> Requerido en Android 13+ para permitir el envío de alertas y notificaciones locales inmediatas sobre nuevos pedidos recibidos de la web, productos con stock crítico, alertas de cobranza y cumplimiento de metas comerciales.
                 </li>
             </ul>
 
@@ -536,30 +507,18 @@
                     registros de ventas ni listas de clientes a ninguna entidad externa.</li>
                 <li>Las únicas conexiones salientes autorizadas son:
                     <ul>
-                        <li><strong>Firebase Realtime Database (RTDB) — Google LLC:</strong> Verificación y gestión
-                            del estado de la licencia. Se transmite únicamente el <code>device_uuid</code>
-                            (hash SHA-256 irreversible) para validar si la licencia está activa.</li>
-                        <li><strong>Cloud Firestore — Google LLC:</strong> Almacenamiento de configuración
-                            administrativa del comercio (estados de bloqueo de terminales, notificaciones del
-                            servicio). No se almacenan datos de ventas ni información personal de clientes finales.</li>
-                        <li><strong>Firebase Storage — Google LLC:</strong> Usado exclusivamente para almacenar
-                            copias de seguridad de configuración cifradas, si el usuario activa explícitamente
-                            esta función opcional. El contenido de ventas, clientes o inventario nunca se sube
-                            automáticamente.</li>
-                        <li><strong>Ministerio de Hacienda de El Salvador (MH):</strong> Solo si el usuario
-                            habilita la función DTE. Se transmiten documentos tributarios de forma cifrada
-                            directamente a las API oficiales del MH. Ningún dato tributario es enviado a
-                            intermediarios ni almacenado por el desarrollador.</li>
+                        <li><strong>Firebase (Google LLC):</strong> Infraestructura de validación de licencias y
+                            notificaciones administrativas. Se envía el <code>device_uuid</code> (hash SHA-256,
+                            no el identificador físico real) para verificar la licencia.
+                            Firebase aplica su propia
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+                                política de privacidad</a>.</li>
                         <li><strong>Servidor local del negocio (LAN/mDNS):</strong> Sincronización de datos
-                            entre dispositivos del mismo establecimiento. Los datos nunca abandonan la red
-                            interna del local comercial. Su configuración es responsabilidad del usuario.</li>
+                            entre dispositivos del mismo establecimiento. El flujo de datos cifrado nunca abandona
+                            la red interna del local comercial. Su configuración es responsabilidad del usuario.</li>
                     </ul>
                 </li>
             </ul>
-            <p>Firebase (Google LLC) aplica su propia
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a>.
-                El usuario puede optar por no participar en la recopilación de datos de diagnóstico de Firebase
-                desactivando las analíticas en la configuración de su dispositivo Android.</p>
 
             <!-- 5. Almacenamiento y seguridad -->
             <h2>5. Almacenamiento y Seguridad de los Datos</h2>
@@ -574,13 +533,7 @@
                 <li>La opción <code>android:allowBackup="false"</code> está habilitada en el manifiesto, lo que
                     <strong>impide que Android realice copias de seguridad automáticas</strong> de los datos de la
                     aplicación en la nube de Google, protegiendo así la información comercial del usuario.</li>
-                <li><strong>Cifrado en tránsito:</strong> Todas las comunicaciones con servicios externos
-                    (Firebase RTDB, Cloud Firestore, Firebase Storage, Ministerio de Hacienda) se realizan
-                    exclusivamente mediante protocolos cifrados <strong>HTTPS/TLS</strong>. Ninguna comunicación
-                    de red ocurre en texto plano.</li>
-                <li>Las credenciales fiscales DTE (certificados <code>.p12</code>/<code>.pfx</code> y sus
-                    contraseñas) se almacenan cifradas en <code>FlutterSecureStorage</code> y pueden ser
-                    borradas de forma remota por el administrador en caso de pérdida del dispositivo.</li>
+                <li>Las conexiones de red externas utilizan HTTPS/TLS.</li>
             </ul>
 
             <div class="highlight-box">
@@ -731,20 +684,6 @@
                         <td>Servidores de Google</td>
                         <td>Diagnóstico técnico / Firebase SDK</td>
                     </tr>
-                    <tr>
-                        <td>Imágenes de productos procesadas con IA (ML Kit on-device)</td>
-                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
-                        <td><span class="tag tag-no">No</span></td>
-                        <td><span class="tag tag-local">Solo local</span></td>
-                        <td>Eliminación de fondo en fotos de catálogo — procesamiento 100% en el dispositivo</td>
-                    </tr>
-                    <tr>
-                        <td>Datos fiscales DTE (NIT, NRC, cert. firma electrónica)</td>
-                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
-                        <td><span class="tag tag-yes">MH El Salvador</span></td>
-                        <td><span class="tag tag-local">Local + API MH (cifrado)</span></td>
-                        <td>Facturación electrónica DTE — solo si la función está habilitada</td>
-                    </tr>
                 </tbody>
             </table>
 
@@ -758,13 +697,8 @@
             <ul>
                 <li><strong>Datos locales:</strong> El usuario puede eliminar sus datos en cualquier momento desde
                     la aplicación, o desinstalando la aplicación del dispositivo.</li>
-                <li><strong>Identificador de licencia (<code>device_uuid</code>):</strong> Puede solicitar su
-                    eliminación del servidor Firebase contactando al soporte técnico mediante
-                    WhatsApp: <strong>+503 7566-6226</strong>. Procesamos la solicitud en un plazo
-                    máximo de <strong>72 horas hábiles</strong>.</li>
-                <li><strong>Credenciales DTE:</strong> El administrador puede ejecutar un borrado remoto
-                    de todos los certificados fiscales guardados en el dispositivo desde la consola de
-                    administración Firebase.</li>
+                <li><strong>Identificador de licencia (device_uuid):</strong> Puede solicitar su eliminación del
+                    servidor Firebase contactando al soporte técnico mediante WhatsApp: +503 7566-6226.</li>
             </ul>
         </div>
 
@@ -774,7 +708,7 @@
         <div class="policy-card" id="terminos">
             <span class="badge">Legal</span>
             <h1>Términos y Condiciones de Uso</h1>
-            <div class="date">Vigente desde: Junio 2026 — Última revisión: 24 de junio de 2026</div>
+            <div class="date">Vigente desde: Junio 2026 — Última revisión: 26 de junio de 2026</div>
 
             <p>Al descargar, instalar o utilizar la aplicación <strong>AuraPOS</strong> (en adelante, «la Aplicación»),
                 el usuario —o el representante legal de la empresa que la opera— declara haber leído, comprendido
